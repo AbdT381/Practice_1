@@ -5,7 +5,7 @@ import sys
 
 
 def parse_arguments(user_input):
-    """Парсит ввод пользователя и раскрывает переменные окружения."""
+    #Парсит ввод пользователя и раскрывает переменные окружения.
     # Раскрываем переменные окружения реальной ОС (например, $HOME или %USERPROFILE%)
     expanded_input = os.path.expandvars(user_input)
 
@@ -26,17 +26,17 @@ def main():
 
     while True:
         try:
-            # Требование 2: Приглашение к вводу содержит имя VFS
+            # Приглашение к вводу содержит имя VFS
             user_input = input(f"{vfs_name} $> ")
 
-            # Требование 3: Парсинг и раскрытие переменных окружения
+            # Парсинг и раскрытие переменных окружения
             command, args = parse_arguments(user_input)
 
             # Если введена пустая строка
             if not command:
                 continue
 
-            # Требование 5: Команда exit
+            # Команда exit
             if command == "exit":
                 if args:
                     print("Ошибка: команда 'exit' не принимает аргументы.")
@@ -44,7 +44,7 @@ def main():
                 print("Завершение работы прототипа VFS. До свидания!")
                 sys.exit(0)
 
-            # Требование 4: Команды-заглушки ls и cd
+            # Команды-заглушки ls и cd
             elif command in ["ls", "cd"]:
                 print(f"[Заглушка] Вызвана команда: {command}")
                 print(f"[Заглушка] Аргументы: {args if args else 'нет'}")
@@ -54,7 +54,7 @@ def main():
                 print(f"Ошибка: неизвестная команда '{command}'. Доступные команды: ls, cd, exit.")
 
         except KeyboardInterrupt:
-            # Красивый выход по Ctrl+C
+            # выход по Ctrl+C
             print("\nПрограмма прервана пользователем. Выход.")
             sys.exit(0)
         except Exception as e:
