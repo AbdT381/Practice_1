@@ -69,7 +69,7 @@ class VFS:
             base = path
         else:
             base = os.path.normpath(os.path.join(self.cwd, path))
-        # нормализация
+        ''' нормализация '''
         return "/" + "/".join(p for p in base.split("/") if p)
 
     def _get_node(self, path: str) -> VFSNode | None:
@@ -106,7 +106,7 @@ class Emulator:
         self.script_path = script
         self.running = True
 
-    # ---------- Этап 1: парсер с раскрытием переменных ----------
+    ''' ---------- Этап 1: парсер с раскрытием переменных ---------- '''
     def expand_vars(self, text: str) -> str:
         pattern = re.compile(r"\$(?:\{(\w+)\}|(\w+))")
 
@@ -117,7 +117,7 @@ class Emulator:
         return pattern.sub(repl, text)
 
     def tokenize(self, line: str) -> list[str]:
-        # простой парсер с поддержкой кавычек
+        ''' простой парсер с поддержкой кавычек '''
         tokens = []
         current = []
         quote = None
@@ -139,7 +139,7 @@ class Emulator:
             tokens.append("".join(current))
         return tokens
 
-    # ---------- Команды ----------
+    ''' ---------- Команды ---------- '''
     def cmd_ls(self, args: list[str]):
         path = args[0] if args else ""
         try:
