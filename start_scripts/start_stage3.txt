@@ -1,0 +1,12 @@
+# Этап 3: демонстрация VFS
+ls /
+cd /a
+ls
+cd b
+ls
+cd c
+ls
+cd /
+ls
+conf-dump
+exit
