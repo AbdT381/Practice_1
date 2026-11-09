@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+'''!/usr/bin/env python3 '''
 """Эмулятор shell с VFS (Вариант №1, этапы 1-3)."""
 
 import argparse
