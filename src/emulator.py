@@ -198,7 +198,7 @@ class Emulator:
             return 1
         return handler(args)
 
-    # ---------- Этап 2: стартовый скрипт ----------
+    ''' ---------- Этап 2: стартовый скрипт ---------- '''
     def run_script(self):
         if not self.script_path:
             return 0
@@ -219,7 +219,7 @@ class Emulator:
                 return rc
         return 0
 
-    # ---------- REPL ----------
+    ''' ---------- REPL ----------'''
     def repl(self):
         while self.running:
             try:
@@ -243,7 +243,7 @@ def main(argv=None):
     else:
         vfs = VFS.default()
 
-    # Этап 2: отладочный вывод параметров при запуске
+    ''' Этап 2: отладочный вывод параметров при запуске '''
     print(f"[DEBUG] vfs={args.vfs or '<default>'}")
     print(f"[DEBUG] script={args.script or '<none>'}")
 
@@ -252,7 +252,7 @@ def main(argv=None):
         rc = emu.run_script()
         if rc != 0:
             return rc
-        # после скрипта — интерактивный режим
+        ''' после скрипта — интерактивный режим '''
     emu.repl()
     return 0
 
