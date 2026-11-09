@@ -38,7 +38,7 @@
  Запуск в интерактивном режиме с VFS по умолчанию
 python src/emulator.py
 
-''' Запуск с указанной VFS '''
+ Запуск с указанной VFS 
 python src/emulator.py --vfs vfs/files.csv
 
 ''' Запуск со стартовым скриптом '''
