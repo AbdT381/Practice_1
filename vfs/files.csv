@@ -1,0 +1,4 @@
+/,dir,
+/readme.txt,file,Hello VFS
+/docs,dir,
+/docs/guide.txt,file,Guide content
