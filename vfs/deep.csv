@@ -1,0 +1,6 @@
+/,dir,
+/a,dir,
+/a/b,dir,
+/a/b/c,dir,
+/a/b/c/deep.txt,file,Deep file
+/root.txt,file,Root file
