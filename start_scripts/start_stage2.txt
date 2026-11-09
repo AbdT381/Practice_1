@@ -1,0 +1,6 @@
+# Этап 2: демонстрация conf-dump и обработки ошибок
+conf-dump
+ls
+cd /nonexistent
+ls
+exit
