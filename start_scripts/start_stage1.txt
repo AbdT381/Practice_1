@@ -1,0 +1,5 @@
+# Этап 1: демонстрация REPL, заглушек ls/cd, exit
+ls
+cd /home/user
+ls
+exit
